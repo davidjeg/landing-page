@@ -15,13 +15,16 @@
       <div>
           <a  href="#hero-section" class="footer-logo">Best<span class="bike-logo">Bike</span></a>
       </div>
+      <div class="hamburguer-container">
+        <div class="hamburguer-line"></div>
+      </div>
       <nav class="navbar">
         <ul class="navbar-list">
-          <li><a href="#hero-section">Home</a> </li>
-          <li><a href="#about-section">About</a> </li>
-          <li><a href="#category-section">Category</a> </li>
-          <li><a href="#services-section">Services</a> </li>
-          <li><a href="#subscribe-section">Contact</a> </li>
+          <li><a class="navbar-link" href="#hero-section">Home</a> </li>
+          <li><a class="navbar-link" href="#about-section">About</a> </li>
+          <li><a class="navbar-link" href="#category-section">Category</a> </li>
+          <li><a class="navbar-link" href="#services-section">Services</a> </li>
+          <li><a class="navbar-link" href="#subscribe-section">Contact</a> </li>
         </ul>
         </nav>
 
@@ -65,7 +68,7 @@ Millions of people prefer our products.Do not miss this opportunity to find the 
       <section class="about-section" id="about-section">
         <div class="container grid grid--2-cols">
           <div class="about-img-container">
-            <img src="https://images.pexels.com/photos/9748608/pexels-photo-9748608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="bicycle">
+            <img class="about-img" src="https://images.pexels.com/photos/9748608/pexels-photo-9748608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="bicycle">
           </div>
           <div class="about-text-container">
 
@@ -259,5 +262,37 @@ The earliest well-known community bicycle program was started in the summer of 1
 
       </footer>
     </main>
+
+
+    <script>
+    const burguerContainer = document.querySelector('.hamburguer-container')
+    const navList = document.querySelector('.navbar-list')
+    const navLink = document.querySelectorAll('.navbar-link')
+    console.log(burguerContainer)
+
+      let isBurguerOpen = false;
+    if(!isBurguerOpen){
+      burguerContainer.addEventListener('click',()=>{
+        isBurguerOpen = true;
+        burguerContainer.classList.toggle('active')
+        navList.classList.toggle('open')
+      })
+    }else{
+      burguerContainer.classList.remove('active')
+      navList.classList.remove('open')
+      isBurguerOpen = false;
+    }
+
+    for(let i = 0; i<navLink.length; i++){
+      navLink[i].onclick = function(){
+        navList.classList.remove('open')
+        burguerContainer.classList.remove('active')
+      }
+    }
+
+  </script>
+
+
+
   </body>
 </html>

@@ -16,7 +16,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.4;
   font-weight: 400;
-  color: #555;
+  color: #434a7e;
   list-style: none;
 }
 
@@ -57,8 +57,6 @@ body {
   display: flex;
   gap: 3.2rem;
 }
-
-
 .navbar-list a{
   text-decoration: none;
   color: #fff;
@@ -68,61 +66,15 @@ body {
 /* HAMBURGUER */
 
 .hamburguer-container{
-  justify-content: center;
-  align-items: center;
-  width: 5rem;
-  height: 75%;
-  cursor: pointer;
-  transition: all 0.5s;
-  overflow: hidden;
-  margin-left: auto;
-  display: flex;
-  position: relative;
-  display: none;
+  background: black;
+
 }
 .hamburguer-line{
-   width: 4rem;
-  height: 0.5rem;
-  background-color: #fff;
-  border-radius: 5px;
-  transition: all .5s;
+  position: relative;
+  height: .5rem;
+  width: 100%;
 }
 
-.hamburguer-line::before,.hamburguer-line::after{
-   content: '';
-  position: absolute;
-  height: 0.5rem;
-  border-radius: 5px;
-  width: 4rem;
-  background-color: #fff;
-  transition: all .3s;
-}
-.hamburguer-line::before{
-  transform: translateY(-1rem)
-}
-
-.hamburguer-line::after{
-  transform: translateY(1rem)
-}
-
-.hamburguer-container.active .hamburguer-line {
-  transform: translateX(-5rem);
-  background: transparent;
-}
-
-.hamburguer-container.active .hamburguer-line::before{
-  transform: rotate(45deg) translate(35px,-35px);
-}
-.hamburguer-container.active .hamburguer-line::after{
-  transform: rotate(-45deg) translate(35px, 35px);
-}
-
-
-/* NAVLINK ANIM */
-.navbar-list.open{
-  transition: all .5s;
-  left: 0;
-}
 
 
 
@@ -615,18 +567,7 @@ display: flex;
     font-size: 1.4rem;
   }
   .navbar-list{
-    position: absolute;
-    top: 6.4rem;
-    display: flex;
-    left: 100%;
-    flex-direction: column;
-    background-color: #343a40;
-    width: 100%;
-    text-align: center; 
-    padding: 2.4rem 0 2.4rem 0;
-  }
-  .hamburguer-container{
-    display: flex;
+    display: none;
   }
 
 }
